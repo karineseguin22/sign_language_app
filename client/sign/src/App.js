@@ -3,6 +3,25 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+
+  componentDidMount() {
+
+    fetch('http://localhost:3000/', {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(result=>result)
+      .then(item=>console.log(item))
+      .catch(e=>{
+        console.log(e);
+        return e;
+      })
+}
+
   return (
     <div className="App">
       <header className="App-header">
@@ -11,6 +30,7 @@ function App() {
           Output
         </p>
         
+      
       </header>
     </div>
   );
